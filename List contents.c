@@ -8,13 +8,14 @@ Description: Lists all the files & other directories in the directory passed thr
 	Dirent.h for the dirent struct.
 	Stdio.h  for printf.
 */
+
 #include <dirent.h>
 #include <stdio.h>
 
-int main ( int argc, char *argv[] ) 
+int main (int argc, char *argv[]) 
 {
 	// Checking that the user has given the correct number of arguments.
-	if ( argc != 3 ) {
+	if (argc != 3) {
 		printf("Usage: %s, directory, logFile \nEG: %s C:\\Program Files, C:\\Log\1.txt", argv[0], argv[0] );
 		getch();
 		return 4;
@@ -45,16 +46,16 @@ int main ( int argc, char *argv[] )
 			closedir(dir);
 			printf("Saved to: %s", argv[2]);
 			return 0;	
-	}
-	// If the directory does not exist.
-	else if (dir == NULL) {
-		printf("You either typed the path incorrectly or the directory does not exist.");
-		closedir(dir);
-		return 1;	
-	}
+		}
+		// If the directory does not exist.
+		else if (dir == NULL) {
+			printf("You either typed the path incorrectly or the directory does not exist.");
+			closedir(dir);
+			return 1;	
+		}
 	// I assume that they are trying to access a restricted directory.
 	else {
-		printf("Could not open file, try running with administrative privilidges.");
+		printf("Could not open directory, try running your command line with administrative privilidges.");
 		closedir(dir);
 		return 2;
 		}
