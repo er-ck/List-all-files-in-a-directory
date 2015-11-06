@@ -1,3 +1,5 @@
+# Return Codes
+
 Error Code | Reason:                                                    | How to fix:
 
 1          | Arguments passed do not fit the required params.		| Enter valid parameters - examples given in command line.
